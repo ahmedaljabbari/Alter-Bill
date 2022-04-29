@@ -18,5 +18,8 @@ connectToDb((err) => {
 
 // routes
 app.get('/bills', (req, res) => {
-  res.json({mssg: "welcome to the api"})
+  db.collection('alter-bills').find().toArray()
+  .then((results) => {
+    res.status(500).json(results)
+  })
 })
