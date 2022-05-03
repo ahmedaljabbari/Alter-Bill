@@ -1,9 +1,12 @@
 const express = require('express')
 const { getDb, connectToDb } = require('./db')
 const { ObjectId } = require('mongodb')
+const bodyParser = require('body-parser');
+
 
 // init app & middleware
 const app = express()
+urlencodedParser = bodyParser.urlencoded({ extended: false})
 app.use(express.json())
 
 app.set('view engine', 'ejs')
